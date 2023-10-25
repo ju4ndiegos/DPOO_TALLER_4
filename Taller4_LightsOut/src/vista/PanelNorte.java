@@ -21,7 +21,7 @@ public class PanelNorte extends JPanel implements ItemListener {
 	
 	private ButtonGroup grupoDificultad;
 	
-	private int tamanioTablero;
+	private int tamanioTablero =5;
 	private int dificultad;
 	
 	

@@ -25,6 +25,16 @@ public class PanelCentro extends JPanel implements MouseListener{
 		setSize( 630, 630 );
 	}
 	
+	public void actualizarTablero(Tablero tablero)
+	{
+		this.tablero=tablero.darTablero();
+//		addMouseListener( this );
+		objTablero=tablero;
+		
+		setSize( 630, 630 );
+		this.repaint();
+	}
+	
 
 	
 	public void paint(Graphics g)
@@ -68,7 +78,7 @@ public class PanelCentro extends JPanel implements MouseListener{
 	int columna=20;// si es 20 no se mueve
 	int fila=20; 
 	
-    int ladoTablero = tablero.length;
+    int ladoTablero = this.tablero.length;
     int altoPanelTablero = 630;
     int anchoPanelTablero = 630;
     int altoCasilla = altoPanelTablero / ladoTablero;
@@ -88,9 +98,9 @@ public class PanelCentro extends JPanel implements MouseListener{
     public void mousePressed( MouseEvent e )
     {
         int click_x = e.getX();
-        //System.out.println("x "+click_x);
+        System.out.println("x "+click_x);
         int click_y = e.getY();
-        //System.out.println("y "+click_y);
+        System.out.println("y "+click_y);
         int[] casilla = convertirCoordenadasACasilla(click_x, click_y);
         
         //System.out.println("casilla 0 "+casilla[0]+"casilla 1 "+casilla[1]);

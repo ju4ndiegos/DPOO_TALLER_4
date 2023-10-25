@@ -61,11 +61,13 @@ public class VentanaPrincipal extends JFrame {
 	
 	public void iniciarJuego()
 	{
+		//int tamanio = pNorte.darTamanioTablero();
+		//System.out.println(pNorte.darTamanioTablero());
 		this.tablero=new Tablero(pNorte.darTamanioTablero());
         this.tablero.desordenar(pNorte.darDificultad());
         
-        pCentro = new PanelCentro(tablero);
-        add(pCentro,BorderLayout.CENTER);
+        
+        this.pCentro.actualizarTablero(this.tablero);
 	}
 	
 	
