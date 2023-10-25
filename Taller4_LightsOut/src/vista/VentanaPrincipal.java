@@ -61,9 +61,9 @@ public class VentanaPrincipal extends JFrame {
 	
 	public void iniciarJuego()
 	{
-		//int tamanio = pNorte.darTamanioTablero();
-		//System.out.println(pNorte.darTamanioTablero());
-		this.tablero=new Tablero(pNorte.darTamanioTablero());
+		int tamanio = pNorte.darTamanioTablero();
+		System.out.println(pNorte.darTamanioTablero());
+		this.tablero=new Tablero(tamanio);
         this.tablero.desordenar(pNorte.darDificultad());
         
         
@@ -71,6 +71,24 @@ public class VentanaPrincipal extends JFrame {
 	}
 	
 	
+
+	public void reiniciarJuego() {
+		// TODO Auto-generated method stub
+        this.tablero.reiniciar();
+        
+        
+        this.pCentro.actualizarTablero(this.tablero);
+	}
+
+	public void darTop10() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void cambiarJuegador() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 	public static void main(String[] args) 
 	{

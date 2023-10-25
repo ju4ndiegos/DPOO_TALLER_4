@@ -39,6 +39,8 @@ public class PanelEste extends JPanel implements ActionListener {
 		btnReiniciar.setForeground(Color.WHITE);
 		btnReiniciar.setBackground(new Color(48,140,228));
 		add(btnReiniciar);
+		btnReiniciar.setActionCommand( "REINICIAR" );
+		btnReiniciar.addActionListener( this );
 		
 		add(new JLabel(" "));
 		
@@ -46,13 +48,16 @@ public class PanelEste extends JPanel implements ActionListener {
 		btnTop10.setForeground(Color.WHITE);
 		btnTop10.setBackground(new Color(48,140,228));
 		add(btnTop10);
-		
+		btnTop10.setActionCommand( "TOP_10" );
+		btnTop10.addActionListener( this );
 		add(new JLabel(" "));
 		
 		btnCambiarJugador = new JButton("CAMBIAR JUGADOR");
 		btnCambiarJugador.setForeground(Color.WHITE);
 		btnCambiarJugador.setBackground(new Color(48,140,228));
 		add(btnCambiarJugador);
+		btnCambiarJugador.setActionCommand( "CAMBIAR_JUGADOR" );
+		btnCambiarJugador.addActionListener( this );
 		
 		add(new JLabel(" "));
 		add(new JLabel(" "));
@@ -63,6 +68,18 @@ public class PanelEste extends JPanel implements ActionListener {
 		if(e.getActionCommand( ).equals( "NUEVO" ))
 		{
 			this.vPrincipal.iniciarJuego();
+		}
+		if(e.getActionCommand( ).equals( "REINICIAR" ))
+		{
+			this.vPrincipal.reiniciarJuego();
+		}
+		if(e.getActionCommand( ).equals( "TOP_10" ))
+		{
+			this.vPrincipal.darTop10();
+		}
+		if(e.getActionCommand( ).equals( "CAMBIAR_JUGADOR" ))
+		{
+			this.vPrincipal.cambiarJuegador();
 		}
 		
 	}
