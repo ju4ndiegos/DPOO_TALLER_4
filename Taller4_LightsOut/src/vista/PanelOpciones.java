@@ -11,7 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class PanelEste extends JPanel implements ActionListener {
+public class PanelOpciones extends JPanel implements ActionListener {
 
 	private VentanaPrincipal vPrincipal;
 	private JButton btnNuevo;
@@ -19,7 +19,7 @@ public class PanelEste extends JPanel implements ActionListener {
 	private JButton btnTop10;
 	private JButton btnCambiarJugador;
 	
-	public PanelEste (VentanaPrincipal vPrincipal)
+	public PanelOpciones (VentanaPrincipal vPrincipal)
 	{
 		this.vPrincipal =vPrincipal;
 		setLayout(new GridLayout( 11, 1 ));
@@ -68,6 +68,7 @@ public class PanelEste extends JPanel implements ActionListener {
 		if(e.getActionCommand( ).equals( "NUEVO" ))
 		{
 			this.vPrincipal.iniciarJuego();
+			
 		}
 		if(e.getActionCommand( ).equals( "REINICIAR" ))
 		{

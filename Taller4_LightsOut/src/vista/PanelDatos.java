@@ -7,14 +7,14 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class PanelSur extends JPanel {
+public class PanelDatos extends JPanel {
 	
 	private JLabel lblJugadas;
 	private JTextField txtJugadas;
 	private JLabel lblJugador;
 	private JTextField txtJugador;
 	
-	public PanelSur()
+	public PanelDatos()
 	{
 		setLayout(new GridLayout( 1, 6,30,0 ));
 		
@@ -36,12 +36,14 @@ public class PanelSur extends JPanel {
         txtJugador.setEditable(false);
         add(txtJugador);
         
-        add(new JLabel(" "));
-        
-        
-        
-        
+        add(new JLabel(" "));  
 		
+	}
+	
+	public void actualizar(int jugadas,String jugador)
+	{
+		txtJugadas.setText(""+jugadas);
+		txtJugador.setText(jugador);
 	}
 
 }

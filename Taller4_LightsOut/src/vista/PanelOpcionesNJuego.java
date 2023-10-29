@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
-public class PanelNorte extends JPanel implements ItemListener {
+public class PanelOpcionesNJuego extends JPanel implements ItemListener {
 
 	
 	private JLabel lblTamanio;
@@ -22,11 +22,11 @@ public class PanelNorte extends JPanel implements ItemListener {
 	private ButtonGroup grupoDificultad;
 	
 	private int tamanioTablero =5;
-	private int dificultad;
+	private int dificultad=5;
 	
 	
 	
-	public PanelNorte()
+	public PanelOpcionesNJuego()
 	{
 		
 		setLayout(new GridLayout( 1, 8,30,0 ));
@@ -68,23 +68,31 @@ public class PanelNorte extends JPanel implements ItemListener {
         rbtnDificil.setBackground(new Color(48,140,228));
         rbtnDificil.setForeground(Color.WHITE);
         
-        if (rbtnFacil.isSelected()==true)
-        {
-        	this.dificultad=5;
-        }
-        else if (rbtnMedio.isSelected()==true)
-        {
-        	this.dificultad=13;
-        }
-        else if(rbtnDificil.isSelected()==true)
-        {
-        	this.dificultad=23;
-        }
-        
+        ItemListener itemListener = new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+            	if (e.getItem() == rbtnFacil)
+            	{
+            		dificultad=5;
+            	}
+            	else if (e.getItem() == rbtnMedio)
+            	{
+            		dificultad=13;
+            	}
+            	else if(e.getItem() == rbtnDificil)
+            	{
+            		dificultad=23;
+            	}
+            }
+        };
         grupoDificultad=new ButtonGroup();
         grupoDificultad.add(rbtnFacil);
         grupoDificultad.add(rbtnMedio);
         grupoDificultad.add(rbtnDificil);
+        
+        rbtnFacil.addItemListener(itemListener);
+        rbtnMedio.addItemListener(itemListener);
+        rbtnDificil.addItemListener(itemListener);
         
         add(rbtnFacil);
         add(rbtnMedio);
