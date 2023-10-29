@@ -70,15 +70,15 @@ public class PanelNorte extends JPanel implements ItemListener {
         
         if (rbtnFacil.isSelected()==true)
         {
-        	this.dificultad=3;
+        	this.dificultad=5;
         }
         else if (rbtnMedio.isSelected()==true)
         {
-        	this.dificultad=9;
+        	this.dificultad=13;
         }
         else if(rbtnDificil.isSelected()==true)
         {
-        	this.dificultad=27;
+        	this.dificultad=23;
         }
         
         grupoDificultad=new ButtonGroup();
