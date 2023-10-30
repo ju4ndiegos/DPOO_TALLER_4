@@ -6,9 +6,12 @@ import java.awt.Graphics2D;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.geom.Rectangle2D;
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 import uniandes.dpoo.taller4.modelo.Tablero;
 
@@ -19,7 +22,8 @@ public class PanelTablero extends JPanel implements MouseListener{
 	private boolean puedeGanar;
 	
 	public PanelTablero(Tablero tablero,VentanaPrincipal vPrincipal)
-	{
+	{	setBorder(new EmptyBorder(2, 2, 2, 1));
+		setBackground(new Color(255,253,247));
 		this.tablero=tablero;
 		addMouseListener( this );
 		
@@ -57,14 +61,14 @@ public class PanelTablero extends JPanel implements MouseListener{
                 Rectangle2D.Double rect= new Rectangle2D.Double( i*anchoRect , j*altoRect, anchoRect, altoRect );
                 if(tableroBoolean[i][j]==true)
                 {
-                    g.setColor( Color.YELLOW );
+                    g.setColor( new Color(240,246,0) );
                 }
                 else
                 {
-                    g.setColor( Color.GRAY );
+                    g.setColor(new Color(99,88,94) );
                 }
                 g2d.fill(rect);
-                g.setColor( Color.BLACK );
+                g.setColor( new Color(2,2,2) );
                 g2d.draw( rect );
             	}
             }
@@ -117,7 +121,15 @@ public class PanelTablero extends JPanel implements MouseListener{
         this.vPrincipal.actualizarPuntos();
         
         if (tablero.tableroIluminado() && this.puedeGanar)
-        {this.vPrincipal.gano();}
+        {try {
+			this.vPrincipal.gano();
+		} catch (FileNotFoundException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}}
     }
 
 	@Override

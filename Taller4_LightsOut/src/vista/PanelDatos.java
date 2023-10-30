@@ -16,6 +16,7 @@ public class PanelDatos extends JPanel {
 	
 	public PanelDatos()
 	{
+		setBackground(new Color(255,253,247));
 		setLayout(new GridLayout( 1, 6,30,0 ));
 		
 		add(new JLabel(" "));

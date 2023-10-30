@@ -199,6 +199,7 @@ public class Top10
 					linea = br.readLine();
 				}
 				br.close();
+				System.out.println("Cargados");
 			}
 			catch (FileNotFoundException e)
 			{
@@ -217,5 +218,6 @@ public class Top10
 			}
 
 		}
+		else {System.out.println("No existe");}
 	}
 }

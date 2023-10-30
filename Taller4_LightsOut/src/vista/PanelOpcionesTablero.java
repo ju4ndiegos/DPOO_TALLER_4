@@ -11,8 +11,9 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.border.EmptyBorder;
 
-public class PanelOpcionesNJuego extends JPanel implements ItemListener {
+public class PanelOpcionesTablero extends JPanel implements ItemListener {
 
 	
 	private JLabel lblTamanio;
@@ -26,14 +27,15 @@ public class PanelOpcionesNJuego extends JPanel implements ItemListener {
 	
 	
 	
-	public PanelOpcionesNJuego()
+	public PanelOpcionesTablero()
 	{
-		
+		setBorder(new EmptyBorder(0, 0, 2, 0));	
 		setLayout(new GridLayout( 1, 8,30,0 ));
 		
 		add(new JLabel(" "));
 		
 		lblTamanio= new JLabel( "Tamaño:" );
+		lblTamanio.setFont(VentanaPrincipal.darFuente());
 		lblTamanio.setForeground(Color.WHITE);
         add(lblTamanio);
         
@@ -53,19 +55,23 @@ public class PanelOpcionesNJuego extends JPanel implements ItemListener {
         
         lblDificultad = new JLabel ("Dificultad:");
         lblDificultad.setForeground(Color.WHITE);
+        lblDificultad.setFont(VentanaPrincipal.darFuente());
         add(lblDificultad);
         
         rbtnFacil = new JRadioButton("Fácil");
         rbtnFacil.setBackground(new Color(48,140,228));
         rbtnFacil.setForeground(Color.WHITE);
+        rbtnFacil.setFont(VentanaPrincipal.darFuente());
         rbtnFacil.setSelected(true);
         
         rbtnMedio = new JRadioButton("Medio");
         rbtnMedio.setBackground(new Color(48,140,228));
+        rbtnMedio.setFont(VentanaPrincipal.darFuente());
         rbtnMedio.setForeground(Color.WHITE);
         
         rbtnDificil = new JRadioButton("Difícil");
         rbtnDificil.setBackground(new Color(48,140,228));
+        rbtnDificil.setFont(VentanaPrincipal.darFuente());
         rbtnDificil.setForeground(Color.WHITE);
         
         ItemListener itemListener = new ItemListener() {

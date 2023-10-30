@@ -10,8 +10,9 @@ import java.awt.event.ItemListener;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
-public class PanelOpciones extends JPanel implements ActionListener {
+public class PanelMenu extends JPanel implements ActionListener {
 
 	private VentanaPrincipal vPrincipal;
 	private JButton btnNuevo;
@@ -19,8 +20,12 @@ public class PanelOpciones extends JPanel implements ActionListener {
 	private JButton btnTop10;
 	private JButton btnCambiarJugador;
 	
-	public PanelOpciones (VentanaPrincipal vPrincipal)
+	public PanelMenu (VentanaPrincipal vPrincipal)
 	{
+		setBorder(new EmptyBorder(5, 0, 5, 3));
+		setBackground(new Color(255,253,247));
+		
+		
 		this.vPrincipal =vPrincipal;
 		setLayout(new GridLayout( 11, 1 ));
 		add(new JLabel(" "));
@@ -80,7 +85,7 @@ public class PanelOpciones extends JPanel implements ActionListener {
 		}
 		if(e.getActionCommand( ).equals( "CAMBIAR_JUGADOR" ))
 		{
-			this.vPrincipal.cambiarJuegador();
+			this.vPrincipal.cambiarJugador();
 		}
 		
 	}
